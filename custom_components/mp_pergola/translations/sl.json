@@ -1,0 +1,75 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Povezava z MP-Pergola",
+        "description": "Vnesite naslov IP krmilnika ali ime gostitelja in trenutno skrbniško geslo. Geslo ste nastavili ob namestitvi ali ga prejeli od monterja.",
+        "data": {
+          "host": "Gostitelj (IP-naslov ali ime.local)",
+          "password": "Skrbniško geslo",
+          "scan_interval": "Interval poizvedbe (sekunde)"
+        },
+        "data_description": {
+          "host": "Na primer 192.168.1.50 ali pergola.local",
+          "password": "Trenutno skrbniško geslo spletnega vmesnika krmilnika",
+          "scan_interval": "Kako pogosto naj se stanje osveži iz krmilnika"
+        }
+      },
+      "zeroconf_confirm": {
+        "title": "Dodaj MP-Pergola",
+        "description": "Na naslovu {host} je bil najden krmilnik pergole. Za dodajanje vnesite skrbniško geslo.",
+        "data": {
+          "password": "Skrbniško geslo"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Ponovna prijava v MP-Pergola",
+        "description": "Krmilnik na naslovu {host} je zavrnil shranjeno geslo. Vnesite trenutno skrbniško geslo.",
+        "data": {
+          "password": "Skrbniško geslo"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Povezava ni uspela. Preverite naslov in ali je krmilnik v omrežju.",
+      "invalid_auth": "Napačno skrbniško geslo (ali pa je krmilnik začasno zaklenjen po večkratnih poskusih).",
+      "unknown": "Nepričakovana napaka"
+    },
+    "abort": {
+      "already_configured": "Ta krmilnik je že nastavljen.",
+      "reauth_successful": "Ponovna prijava je uspela."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Možnosti MP-Pergola",
+        "data": {
+          "scan_interval": "Interval poizvedbe (sekunde)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "rssi": { "name": "Wi-Fi signal" },
+      "ssid": { "name": "Wi-Fi omrežje" },
+      "ip": { "name": "IP-naslov" },
+      "firmware": { "name": "Vdelana programska oprema" },
+      "uptime": { "name": "Čas delovanja" },
+      "free_heap": { "name": "Prosti pomnilnik" }
+    },
+    "button": {
+      "brighten": { "name": "Posvetli" },
+      "dim": { "name": "Zatemni" },
+      "pair": { "name": "Poveži" }
+    }
+  },
+  "services": {
+    "pair": {
+      "name": "Poveži",
+      "description": "Seznani krmilnik kot dodatni daljinec. Senčila: P2 pod pokrovčkom baterije, počakajte 2 s, znova P2, nato Poveži. Streha in luč: izklopite in vklopite napajanje motorja, nato v 10 s Poveži; krmilnik pošilja kodirni signal približno 5 s in STOP približno 5 s. Opazujte odziv in preizkusite upravljanje; potrditve iz motorja ni."
+    }
+  }
+}

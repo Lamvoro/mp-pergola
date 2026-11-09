@@ -1,0 +1,75 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Connect to MP-Pergola",
+        "description": "Enter the controller IP address or hostname and its current admin password. Use the password set during setup or supplied by your installer.",
+        "data": {
+          "host": "Host (IP address or name.local)",
+          "password": "Admin password",
+          "scan_interval": "Poll interval (seconds)"
+        },
+        "data_description": {
+          "host": "For example 192.168.1.50 or pergola.local",
+          "password": "The current admin password for the controller web interface",
+          "scan_interval": "How often to refresh state from the controller"
+        }
+      },
+      "zeroconf_confirm": {
+        "title": "Add MP-Pergola",
+        "description": "A pergola controller was found at {host}. Enter its admin password to add it.",
+        "data": {
+          "password": "Admin password"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-authenticate MP-Pergola",
+        "description": "The controller at {host} rejected the stored password. Enter the current admin password.",
+        "data": {
+          "password": "Admin password"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect. Check the address and that the controller is on the network.",
+      "invalid_auth": "Invalid admin password (or the controller is temporarily locked out after repeated attempts).",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "This controller is already configured.",
+      "reauth_successful": "Re-authentication was successful."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "MP-Pergola options",
+        "data": {
+          "scan_interval": "Poll interval (seconds)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "rssi": { "name": "Wi-Fi signal" },
+      "ssid": { "name": "Wi-Fi network" },
+      "ip": { "name": "IP address" },
+      "firmware": { "name": "Firmware" },
+      "uptime": { "name": "Uptime" },
+      "free_heap": { "name": "Free memory" }
+    },
+    "button": {
+      "brighten": { "name": "Brighten" },
+      "dim": { "name": "Dim" },
+      "pair": { "name": "Pair" }
+    }
+  },
+  "services": {
+    "pair": {
+      "name": "Pair",
+      "description": "Pair the controller as an additional remote. Shades: P2 under the battery cover, wait 2 s, P2 again, then Pair. Roof and light: power-cycle the motor, then Pair within 10 s; the controller sends the code-key signal for about 5 s and STOP for about 5 s. Watch the response and test control; there is no motor feedback."
+    }
+  }
+}

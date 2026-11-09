@@ -1,0 +1,12 @@
+# MP-Pergola services.
+# `pair` is also available as a per-device button; this service lets you trigger
+# the motor learn frame from automations / scripts by targeting a cover or light
+# entity (or its device/area).
+pair:
+  target:
+    entity:
+      integration: mp_pergola
+      domain:
+        - cover
+        - light
+  fields: {}

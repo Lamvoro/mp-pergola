@@ -1,0 +1,13 @@
+{
+  "domain": "mp_pergola",
+  "name": "MP-Pergola",
+  "codeowners": ["@lamvoro"],
+  "config_flow": true,
+  "documentation": "https://lamvoro.com/mp-pergola-ha",
+  "integration_type": "hub",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/lamvoro/mp-pergola-ha/issues",
+  "requirements": [],
+  "version": "1.0.0",
+  "zeroconf": ["_pergola._tcp.local."]
+}
